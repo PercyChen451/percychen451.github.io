@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percy Chen - Portfolio</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -39,21 +45,52 @@
             line-height: 1.6;
             background: #f8f9fa;
         }
-        .intro {
+        
+        /* Navigation */
+        .nav-container {
             background: white;
-            padding: 40px;
-            margin: 30px 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            text-align: center;
-            border-left: 5px solid #2c3e50;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
         }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .nav-link {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .nav-link:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+        
         .project {
             background: white;
             padding: 30px;
             margin: 30px 0;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         .project-header {
             display: flex;
@@ -90,6 +127,11 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             margin: 5px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        img:hover {
+            transform: scale(1.02);
         }
         .responsibilities-grid {
             display: grid;
@@ -102,6 +144,10 @@
             padding: 15px;
             border-radius: 8px;
             border-left: 4px solid #3498db;
+            transition: transform 0.2s ease;
+        }
+        .responsibility-card:hover {
+            transform: translateX(5px);
         }
         .tech-stack {
             display: flex;
@@ -115,6 +161,11 @@
             padding: 4px 10px;
             border-radius: 12px;
             font-size: 0.85em;
+            transition: all 0.3s ease;
+        }
+        .tech-tag:hover {
+            background: #2980b9;
+            transform: scale(1.05);
         }
         a {
             color: #0366d6;
@@ -138,6 +189,65 @@
             background: linear-gradient(90deg, transparent, #3498db, transparent);
             margin: 40px 0;
         }
+        
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        #backToTop:hover {
+            background: #2980b9;
+            transform: scale(1.1);
+        }
+        
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        #lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        #lightbox-close:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -154,11 +264,21 @@
         <img src="Percy.jpg" alt="Right Image" class="header-image">
     </div>
 
+    <!-- Navigation Menu -->
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="#icarus" class="nav-link">🚀 Icarus</a>
+            <a href="#argo" class="nav-link">🛰️ Argo</a>
+            <a href="#daedalus" class="nav-link">🎛️ Daedalus</a>
+            <a href="#research" class="nav-link">🤖 Research</a>
+            <a href="#ec412" class="nav-link">⚡ EC412</a>
+        </div>
+    </nav>
+
     <hr class="section-divider">
 
     <!-- Icarus Project -->
-    <!-- Icarus Project -->
-    <section class="project">
+    <section id="icarus" class="project">
         <div class="project-header">
             <div>
                 <h2 class="project-title">🚀 Icarus - Liquid Bipropellant Rocket</h2>
@@ -168,8 +288,8 @@
         </div>
 
         <div class="media-container">
-            <img src="icaurs_poster.png" alt="Icarus Rocket" width="260">
-            <img src="IMG_6588.JPG" alt="Icarus Rocket" width="300">
+            <img src="icaurs_poster.png" alt="Icarus Rocket" width="260" onclick="openLightbox(this.src)">
+            <img src="IMG_6588.JPG" alt="Icarus Rocket" width="300" onclick="openLightbox(this.src)">
             <p><em>Icarus Rocket</em></p>
         </div>
 
@@ -244,7 +364,7 @@
     </section>
 
     <!-- Argo Project -->
-    <section class="project">
+    <section id="argo" class="project">
         <div class="project-header">
             <div>
                 <h2 class="project-title">🚀 Argo - High-Altitude Rocket (WIP)</h2>
@@ -254,10 +374,10 @@
         </div>
 
         <div class="media-container">
-            <img src="FCREV1.png" alt="Flight Computer Design" width="400">
-            <img src="ArgoFCrev1.png" alt="PCB Layout" width="400">
-            <img src="ArgoFC1.drawio (1).png" alt="Flight Computer Design" width="450">
-            <img src="FCPCBA.jpg" alt="PCB Layout" width="300">
+            <img src="FCREV1.png" alt="Flight Computer Design" width="400" onclick="openLightbox(this.src)">
+            <img src="ArgoFCrev1.png" alt="PCB Layout" width="400" onclick="openLightbox(this.src)">
+            <img src="ArgoFC1.drawio (1).png" alt="Flight Computer Design" width="450" onclick="openLightbox(this.src)">
+            <img src="FCPCBA.jpg" alt="PCB Layout" width="300" onclick="openLightbox(this.src)">
             <p><em>Flight Computer PCB Design & Layout</em></p>
         </div>
 
@@ -309,7 +429,7 @@
     </section>
 
     <!-- Daedalus Controller -->
-    <section class="project">
+    <section id="daedalus" class="project">
         <div class="project-header">
             <div>
                 <h2 class="project-title">🎛️ Daedalus Ground Support Controller</h2>
@@ -319,8 +439,8 @@
         </div>
 
         <div class="media-container">
-            <img src="DLrev2_testing.jpg" alt="Controller Testing" width="340">
-            <img src="IcarusGSE.png" alt="Ground Support Equipment" width="430">
+            <img src="DLrev2_testing.jpg" alt="Controller Testing" width="340" onclick="openLightbox(this.src)">
+            <img src="IcarusGSE.png" alt="Ground Support Equipment" width="430" onclick="openLightbox(this.src)">
             <p><em>Controller Testing & Ground Support System</em></p>
         </div>
 
@@ -356,7 +476,7 @@
     </section>
 
     <!-- Surgical Robot Research -->
-    <section class="project">
+    <section id="research" class="project">
         <div class="project-header">
             <div>
                 <h2 class="project-title">🤖 Surgical Robot Research</h2>
@@ -366,10 +486,10 @@
         </div>
 
         <div class="media-container">
-            <img src="SRfigure.png" alt="Surgical Robot Design" width="400">
-            <img src="Tracking.png" alt="Tracking System" width="400">
-            <img src="FS.png" alt="Force Sensor PCB" width="300">
-            <img src="HapticsGUI.png" alt="HapticsUI" width="445">
+            <img src="SRfigure.png" alt="Surgical Robot Design" width="400" onclick="openLightbox(this.src)">
+            <img src="Tracking.png" alt="Tracking System" width="400" onclick="openLightbox(this.src)">
+            <img src="FS.png" alt="Force Sensor PCB" width="300" onclick="openLightbox(this.src)">
+            <img src="HapticsGUI.png" alt="HapticsUI" width="445" onclick="openLightbox(this.src)">
             <p><em>Soft Robot Design & Tracking System</em></p>
         </div>
 
@@ -415,50 +535,18 @@
         </div>
     </section>
 
-    <section class="project">
-        <div class="project-header">
-            <h2 class="project-title">
-                WIP
-            </h2>
-            <p class="project-subtitle">WIP</p>
-
-        </div>
-
-        <div class="media-container">
-            <img src="Placeholder.png" alt="Placeholder1.png" width="400">
-            <img src="Placeholder.png" alt="Placeholder2.png" width="400">
-            <p><em>Circuit</em></p>
-        </div>
-
-
-        <h3>🔧 Technical Stack</h3>
-        <div class="responsibilities-grid">
-            <div class="responsibility-card">
-                <strong>Placeholder.pngr</strong>
-            </div>
-            <div class="responsibility-card">
-                <strong>Placeholder.png</strong> 
-            </div>
-
-        </div>
-
-
-    </section>
-    
     <!-- Analog Elec project -->
-    <section class="project">
+    <section id="ec412" class="project">
         <div class="project-header">
             <h2 class="project-title">⚡ EC412 project</h2>
             <p class="project-subtitle">PID controlled Buck converter</p>
-
         </div>
 
         <div class="media-container">
-            <img src="System overview.png" alt="System overview" width="400">
-            <img src="breadboard.drawio.png" alt="breadboard.drawio" width="400">
+            <img src="System overview.png" alt="System overview" width="400" onclick="openLightbox(this.src)">
+            <img src="breadboard.drawio.png" alt="breadboard.drawio" width="400" onclick="openLightbox(this.src)">
             <p><em>Circuit</em></p>
         </div>
-
 
         <h3>🔧 Technical Stack</h3>
         <div class="responsibilities-grid">
@@ -468,40 +556,67 @@
             <div class="responsibility-card">
                 <strong>Fast Response</strong> 
             </div>
-
         </div>
-
-
     </section>
 
-        <section class="project">
-        <div class="project-header">
-            <h2 class="project-title">
-                WIP
-            </h2>
-            <p class="project-subtitle">WIP</p>
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Enlarged view">
+        <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+    </div>
 
-        </div>
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
 
-        <div class="media-container">
-            <img src="Placeholder.png" alt="Placeholder1.png" width="400">
-            <img src="Placeholder.png" alt="Placeholder2.png" width="400">
-            <p><em>Circuit</em></p>
-        </div>
+    <script>
+        // Back to Top Button
+        window.onscroll = function() {
+            var button = document.getElementById('backToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
 
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
 
-        <h3>🔧 Technical Stack</h3>
-        <div class="responsibilities-grid">
-            <div class="responsibility-card">
-                <strong>Placeholder.pngr</strong>
-            </div>
-            <div class="responsibility-card">
-                <strong>Placeholder.png</strong> 
-            </div>
+        // Lightbox functionality
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
 
-        </div>
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
 
+        // Close lightbox when clicking outside image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
 
-    </section>
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
