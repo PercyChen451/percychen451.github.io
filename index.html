@@ -19,12 +19,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percy Chen - Portfolio</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: Arial, sans-serif;
             max-width: 1000px;
@@ -86,7 +82,7 @@
             text-decoration: none;
         }
 
-        /* --- NEW: Visual Gallery Front Page --- */
+        /* --- Visual Gallery Front Page --- */
         .front-page-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -103,9 +99,7 @@
             background: #2c3e50;
             text-decoration: none;
         }
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
+        .gallery-item:hover { transform: translateY(-5px); }
         .gallery-item img {
             width: 100%;
             height: 100%;
@@ -113,9 +107,7 @@
             opacity: 0.7;
             transition: opacity 0.3s;
         }
-        .gallery-item:hover img {
-            opacity: 0.4;
-        }
+        .gallery-item:hover img { opacity: 0.4; }
         .gallery-text {
             position: absolute;
             bottom: 0;
@@ -243,9 +235,7 @@
             transition: transform 0.3s ease;
             cursor: pointer;
         }
-        img:hover {
-            transform: scale(1.02);
-        }
+        img:hover { transform: scale(1.02); }
 
         /* --- Responsive Video Wrapper --- */
         .video-responsive {
@@ -281,9 +271,7 @@
             border-left: 4px solid #3498db;
             transition: transform 0.2s ease;
         }
-        .responsibility-card:hover {
-            transform: translateX(5px);
-        }
+        .responsibility-card:hover { transform: translateX(5px); }
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
@@ -302,14 +290,8 @@
             background: #2980b9;
             transform: scale(1.05);
         }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        a { color: #0366d6; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
         .achievement-badge {
             background: #e74c3c;
             color: white;
@@ -463,11 +445,12 @@
                 <p>Surgical Robots & Machine Learning</p>
             </div>
         </a>
-        <a href="#balancing" class="gallery-item">
-            <img src="balancing_robot.gif" alt="Balancing Robot">
-            <div class="gallery-text"><h3>⚖️ Balancing Robot</h3><p>PID Control & IMU (WIP)</p></div>
+        <a href="#ec412" class="gallery-item">
+            <img src="PID_Ltspice.png" alt="EC412">
+            <div class="gallery-text"><h3>⚡ Analog PID Control</h3><p>Custom Buck Converter</p></div>
         </a>
     </div>
+    
     <nav class="nav-container">
         <div class="nav-links">
             <a href="#active" class="nav-link">⚡ Active Work</a>
@@ -518,7 +501,7 @@
                 </div>
                 <div class="checklist-item">
                     <span class="checkbox">☐</span> Board bring-up: Ethernet Switch 
-                
+                 
                 </div>
                 <div class="checklist-item">
                     <span class="checkbox">☐</span> Flight software
@@ -586,7 +569,7 @@
                         <a href="https://www.bu.edu/eng/2025/09/22/skyward-bound/" 
                            target="_blank" 
                            style="color: #0366d6; text-decoration: none;">
-                             Skyward Bound: BU Rocket Propulsion Group Sets New Collegiate Record
+                            Skyward Bound: BU Rocket Propulsion Group Sets New Collegiate Record
                         </a>
                     </h5>
                     <p style="margin: 0; color: #666; font-size: 0.95em;">
@@ -801,93 +784,106 @@
                 <strong>Tracking System</strong> - 3-camera position tracking and magnetic localization
             </div>
             <div class="responsibility-card">
-                <strong>Machine Learning</strong> - Calibrated sensor with FCNN (fully connected neural networks)
+                <strong>Machine Learning</strong> - Calibrated sensor with FCNN (Feed-Forward Neural Networks)
             </div>
-            <div class="responsibility-card">
-                <strong>Signal processing</strong> - Differential sensor setup, faraday cage wire harness, Karman filter for Tracking system
-            </div>
-            <div class="responsibility-card">
-                <strong>Control Systems</strong> - Inverse kinematics & closed-loop controller for SBA
-            </div>
-        </div>
-
-        <h3>🛠️ Technical Stack</h3>
-        <div class="tech-stack">
-            <span class="tech-tag">Custom PCB Design</span>
-            <span class="tech-tag">BLDC Motor Drivers</span>
-            <span class="tech-tag">ROS2</span>
-            <span class="tech-tag">Signal processing</span>
-            <span class="tech-tag">Magnetometers</span>
-            <span class="tech-tag">FCNN Modeling</span>
-            <span class="tech-tag">Data-Driven Calibration</span>
-            <span class="tech-tag">Inverse Kinematics</span>
-        </div>
-
-        <div style="background: #d4edda; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #28a745;">
-            <strong>📄 Publication:</strong> Contributing to journal paper currently in preparation
         </div>
     </section>
 
     <section id="ec412" class="project">
         <div class="project-header">
-            <h2 class="project-title">⚡ EC412 project</h2>
-            <p class="project-subtitle">PID controlled Buck converter</p>
+            <div>
+                <h2 class="project-title">⚡ EC412 Project</h2>
+                <p class="project-subtitle">Custom Analog PID Controlled Buck Converter</p>
+            </div>
+            <div class="project-duration">Completed Apr 2025</div>
+        </div>
+        <p class="role"><strong>Team:</strong> Aymeric Blaizot & Yuxuan (Percy) Chen</p>
+
+        <div class="media-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="System overview.png" alt="System Overview" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">System Architecture</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="breadboard.drawio.png" alt="Breadboard" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">Circuit Assembly</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="PID_Ltspice.png" alt="PID Schematic" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">PID Schematic</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="Schmitt-trigger with positive integrator.png" alt="Transient Response" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">Transient Response</span>
+            </div>
         </div>
 
-        <div class="media-container">
-            <img src="System overview.png" alt="System overview" width="400" onclick="openLightbox(this.src)">
-            <img src="breadboard.drawio.png" alt="breadboard.drawio" width="400" onclick="openLightbox(this.src)">
+        <div class="project-details">
+            <h3>Project Overview</h3>
             
-            <img src="PID_Ltspice.png" alt="Analog PID Circuit Schematic" width="400" onclick="openLightbox(this.src)">
-            <img src="Schmitt_trigger with_positive_integrator.png" alt="Transient Response Oscilloscope Trace" width="400" onclick="openLightbox(this.src)">
-            
-            <p><em>Circuit & Test Results</em></p>
+            <p>
+                Designed and implemented a closed-loop DC-DC converter using discrete analog components to reverse-engineer commercial IC architecture. 
+                Constructed a 5-op-amp PID controller to actively regulate output voltage, balancing transient response speed with stability against noise.
+            </p>
+
+            <div style="background: #f9fafb; padding: 15px; border-radius: 6px; border-left: 4px solid #3b82f6; margin-top: 15px;">
+                <h4 style="margin-top: 0; font-size: 1rem;">Engineering Highlights</h4>
+                <ul style="padding-left: 20px; margin-bottom: 0;">
+                    <li style="margin-bottom: 8px;">
+                        <strong>Analog Control Loop:</strong> Built a continuous-time PID controller with independent P, I, and D stages to eliminate steady-state error and reduce overshoot.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>PWM Generation:</strong> Engineered a custom duty-cycle generator using a comparator and BJT-amplified ramp signal.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>System Performance:</strong> Achieved &lt;3% voltage tracking error in the 1.3V–3.0V active range with low output ripple (~20mV).
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <h3>🔧 Technical Stack</h3>
-        <div class="responsibilities-grid">
-            <div class="responsibility-card">
-                <strong>Analog PID controller</strong>
-            </div>
-            <div class="responsibility-card">
-                <strong>Fast Response</strong> 
-            </div>
-            <div class="responsibility-card">
-                <strong>Schmitt-trigger with positive integrator</strong> 
-            </div>
-            
+        <div class="tech-stack" style="margin-top: 20px;">
+            <span class="tech-tag">Analog Circuit Design</span>
+            <span class="tech-tag">PID Control Theory</span>
+            <span class="tech-tag">LTspice Simulation</span>
+            <span class="tech-tag">Power Electronics</span>
         </div>
     </section>
 
-    <div id="lightbox">
-        <img id="lightbox-img" src="" alt="Enlarged view">
-        <button id="lightbox-close" onclick="closeLightbox()">✕</button>
-    </div>
-
     <button id="backToTop" onclick="scrollToTop()">↑</button>
 
+    <div id="lightbox" onclick="closeLightbox()">
+        <button id="lightbox-close">&times;</button>
+        <img id="lightbox-img" src="" alt="Full Screen Image">
+    </div>
+
     <script>
-        // Back to Top Button
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+
+        // Back to Top Button Logic
+        const backToTopBtn = document.getElementById("backToTop");
+        
         window.onscroll = function() {
-            var button = document.getElementById('backToTop');
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                button.style.display = 'block';
+                backToTopBtn.style.display = "block";
             } else {
-                button.style.display = 'none';
+                backToTopBtn.style.display = "none";
             }
         };
 
         function scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        // Lightbox functionality
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
