@@ -433,7 +433,66 @@
             <span class="tech-tag">Power Electronics</span>
         </div>
     </section>
+<section id="ec580" class="project">
+        <div class="project-header">
+            <div>
+                <h2 class="project-title">📡 EC580 - CMOS Low Noise Amplifier</h2>
+                <p class="project-subtitle">1.5-GHz GPS Receiver Front-End</p>
+            </div>
+            <div class="project-duration">Fall 2024</div>
+        </div>
+        <p class="role"><strong>Team:</strong> Percy Chen, Aaron Villagomez, Vincent Lin</p>
 
+        <div class="media-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="EC580_Schematic.png" alt="LNA Schematic" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">Cadence Schematic</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="EC580_Gain_NF.png" alt="Gain and Noise Figure" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">Gain (S21) & Noise Figure</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="EC580_Impedance.png" alt="Impedance Matching" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">Input/Output Impedance</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="EC580_Architecture.png" alt="LNA Topology" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">Cascode Architecture</span>
+            </div>
+        </div>
+
+        <div class="project-details">
+            <h3>Project Overview</h3>
+            <p>
+                Designed and simulated a high-performance CMOS Low Noise Amplifier (LNA) targeted for the 1.575 GHz GPS band. 
+                Addressed the challenge of detecting weak signals (-130 dBm) by implementing a two-stage Cascode architecture with inductive source degeneration to optimize Noise Figure (NF) and Gain without noisy resistive matching.
+            </p>
+
+            <div style="background: #f9fafb; padding: 15px; border-radius: 6px; border-left: 4px solid #8e44ad; margin-top: 15px;">
+                <h4 style="margin-top: 0; font-size: 1rem; color: #8e44ad;">Engineering Highlights</h4>
+                <ul style="padding-left: 20px; margin-bottom: 0;">
+                    <li style="margin-bottom: 8px;">
+                        <strong>Performance:</strong> Achieved a high forward gain (S21) of ~55 dB and a low Noise Figure of 3.9 dB at 1.42 GHz, verifying effective weak-signal amplification.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Topology Design:</strong> Utilized Inductive Source Degeneration to create a real 50Ω input impedance match without thermal noise penalties.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Advanced Sizing:</strong> Optimized transistor channel lengths (150nm for gain/linearity, 50nm for RF speed) to balance bandwidth against DC stability.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-stack" style="margin-top: 20px;">
+            <span class="tech-tag" style="background: #8e44ad;">Cadence Virtuoso</span>
+            <span class="tech-tag" style="background: #8e44ad;">Spectre RF</span>
+            <span class="tech-tag" style="background: #8e44ad;">Analog IC Design</span>
+            <span class="tech-tag" style="background: #8e44ad;">S-Parameter Analysis</span>
+            <span class="tech-tag" style="background: #8e44ad;">Impedance Matching</span>
+        </div>
+    </section>
     <button id="backToTop" onclick="scrollToTop()">↑</button>
 
     <div id="lightbox" onclick="closeLightbox()">
