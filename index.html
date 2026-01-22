@@ -2,391 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url='https://percychen451.github.io/PercyChen.github.io/'" />
-    <title>Redirecting to Percy Chen's Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background: #f8f9fa; }
-        a { color: #007bff; text-decoration: none; font-weight: bold; }
-    </style>
-</head>
-<body>
-    <p>Redirecting to my updated portfolio...</p>
-    <p>If you are not redirected in 2 seconds, <a href="https://percychen451.github.io/">click here</a>.</p>
-</body>
-</html>
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percy Chen - Portfolio</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            background: #f8f9fa;
-        }
-
-        /* --- Header Styles --- */
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .header-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        .header-center {
-            text-align: center;
-            flex-grow: 1;
-            padding: 0 20px;
-        }
-        .header-description {
-            color: #7f8c8d;
-            max-width: 600px;
-            margin: 10px auto 0 auto;
-            font-size: 0.95em;
-        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; line-height: 1.6; background: #f8f9fa; }
         
-        /* Social Links Section */
-        .social-links {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .social-btn {
-            padding: 6px 14px;
-            border-radius: 20px;
-            color: white;
-            font-size: 0.9em;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
-        .social-btn:hover {
-            transform: scale(1.05);
-            text-decoration: none;
-        }
+        /* Header & Nav */
+        .header-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .header-image { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .header-center { text-align: center; flex-grow: 1; padding: 0 20px; }
+        .header-description { color: #7f8c8d; max-width: 600px; margin: 10px auto 0 auto; font-size: 0.95em; }
+        
+        /* Socials */
+        .social-links { margin-top: 15px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .social-btn { padding: 6px 14px; border-radius: 20px; color: white; font-size: 0.9em; text-decoration: none; font-weight: bold; transition: transform 0.2s; }
+        .social-btn:hover { transform: scale(1.05); text-decoration: none; }
 
-        /* --- NEW: Visual Gallery Front Page --- */
-        .front-page-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        .gallery-item {
-            position: relative;
-            height: 200px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-            background: #2c3e50;
-            text-decoration: none;
-        }
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-        .gallery-item:hover img {
-            opacity: 0.4;
-        }
-        .gallery-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            padding: 20px;
-            color: white;
-            width: 100%;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-        }
+        /* Gallery */
+        .front-page-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
+        .gallery-item { position: relative; height: 200px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease; background: #2c3e50; text-decoration: none; }
+        .gallery-item:hover { transform: translateY(-5px); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: opacity 0.3s; }
+        .gallery-item:hover img { opacity: 0.4; }
+        .gallery-text { position: absolute; bottom: 0; left: 0; padding: 20px; color: white; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.8)); }
         .gallery-text h3 { margin: 0; font-size: 1.2em; }
         .gallery-text p { margin: 5px 0 0; font-size: 0.85em; opacity: 0.9; }
 
-        /* --- Navigation --- */
-        .nav-container {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 10px;
-            z-index: 100;
-        }
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .nav-link {
-            padding: 10px 20px;
-            background: #f8f9fa;
-            border-radius: 20px;
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        .nav-link:hover {
-            background: #3498db;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-        }
+        /* Nav Bar */
+        .nav-container { background: white; padding: 15px; border-radius: 8px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 10px; z-index: 100; }
+        .nav-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .nav-link { padding: 10px 20px; background: #f8f9fa; border-radius: 20px; text-decoration: none; color: #2c3e50; font-weight: bold; transition: all 0.3s ease; border: 2px solid transparent; }
+        .nav-link:hover { background: #3498db; color: white; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3); }
         
-        /* --- Active Status Styles --- */
-        .live-indicator {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: #2ecc71;
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 0 rgba(46, 204, 113, 0.4);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
-        }
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .checkbox {
-            margin-right: 10px;
-            color: #2ecc71;
-            font-weight: bold;
-        }
+        /* Utils */
+        .live-indicator { display: inline-block; width: 10px; height: 10px; background-color: #2ecc71; border-radius: 50%; margin-right: 8px; box-shadow: 0 0 0 rgba(46, 204, 113, 0.4); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
+        .checklist-item { display: flex; align-items: center; margin-bottom: 10px; }
+        .checkbox { margin-right: 10px; color: #2ecc71; font-weight: bold; }
         
-        /* --- Projects --- */
-        .project {
-            background: white;
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        .project-title {
-            color: #2c3e50;
-            margin: 0;
-            font-size: 1.5em;
-        }
-        .project-subtitle {
-            color: #7f8c8d;
-            font-size: 1.1em;
-            margin: 5px 0 15px 0;
-        }
-        .project-duration {
-            background: #34495e;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            white-space: nowrap;
-        }
+        /* Projects */
+        .project { background: white; padding: 30px; margin: 30px 0; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; }
+        .project-title { color: #2c3e50; margin: 0; font-size: 1.5em; }
+        .project-subtitle { color: #7f8c8d; font-size: 1.1em; margin: 5px 0 15px 0; }
+        .project-duration { background: #34495e; color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; white-space: nowrap; }
 
-        /* --- Media & Images --- */
-        .media-container {
-            text-align: center;
-            margin: 25px 0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 5px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        img:hover {
-            transform: scale(1.02);
-        }
+        /* Images & Video */
+        .media-container { text-align: center; margin: 25px 0; }
+        img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 5px; transition: transform 0.3s ease; cursor: pointer; }
+        img:hover { transform: scale(1.02); }
+        .video-responsive { overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); background: #000; max-width: 800px; margin: 0 auto; }
+        .video-responsive iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; }
 
-        /* --- Responsive Video Wrapper --- */
-        .video-responsive {
-            overflow: hidden;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            position: relative;
-            height: 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            background: #000;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .video-responsive iframe {
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-        }
-
-        /* --- Grids & Lists --- */
-        .responsibilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .responsibility-card {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            transition: transform 0.2s ease;
-        }
-        .responsibility-card:hover {
-            transform: translateX(5px);
-        }
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0;
-        }
-        .tech-tag {
-            background: #3498db;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            transition: all 0.3s ease;
-        }
-        .tech-tag:hover {
-            background: #2980b9;
-            transform: scale(1.05);
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .achievement-badge {
-            background: #e74c3c;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.8em;
-            margin-left: 10px;
-            display: inline-block;
-            margin-top: 5px;
-        }
-        .section-divider {
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #3498db, transparent);
-            margin: 40px 0;
-        }
+        /* Cards & Grid */
+        .responsibilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .responsibility-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db; transition: transform 0.2s ease; }
+        .responsibility-card:hover { transform: translateX(5px); }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0; }
+        .tech-tag { background: #3498db; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.85em; transition: all 0.3s ease; }
+        .tech-tag:hover { background: #2980b9; transform: scale(1.05); }
+        a { color: #0366d6; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        .achievement-badge { background: #e74c3c; color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.8em; margin-left: 10px; display: inline-block; margin-top: 5px; }
+        .section-divider { border: none; height: 2px; background: linear-gradient(90deg, transparent, #3498db, transparent); margin: 40px 0; }
         
-        /* --- Back to Top Button --- */
-        #backToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            z-index: 1000;
-            font-size: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-        #backToTop:hover {
-            background: #2980b9;
-            transform: scale(1.1);
-        }
+        /* UI Elements */
+        #backToTop { position: fixed; bottom: 30px; right: 30px; background: #3498db; color: white; border: none; padding: 15px; border-radius: 50%; cursor: pointer; display: none; z-index: 1000; font-size: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease; }
+        #backToTop:hover { background: #2980b9; transform: scale(1.1); }
         
-        /* --- Lightbox --- */
-        #lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-        #lightbox-img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-        }
-        #lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 12px 18px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            transition: all 0.3s ease;
-        }
-        #lightbox-close:hover {
-            background: #c0392b;
-            transform: scale(1.1);
-        }
+        #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 2000; }
+        #lightbox-img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+        #lightbox-close { position: absolute; top: 20px; right: 20px; background: #e74c3c; color: white; border: none; padding: 12px 18px; border-radius: 50%; cursor: pointer; font-size: 20px; transition: all 0.3s ease; }
+        #lightbox-close:hover { background: #c0392b; transform: scale(1.1); }
 
-        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
             body { padding: 10px; }
             .header-container { flex-direction: column; text-align: center; }
@@ -395,23 +86,10 @@
             .project-duration { margin-top: 10px; align-self: flex-start; }
             .nav-link { padding: 8px 12px; font-size: 0.9em; }
             .project-title { font-size: 1.3em; }
-
             .rocket-layout { flex-direction: column; }
-            .rocket-column {
-                width: 100% !important;
-                position: static !important;
-                margin-top: 20px;
-            }
-            .tall-rocket-img {
-                max-height: 400px;
-                width: auto !important;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-            }
-            .media-container[style*="grid"] {
-                grid-template-columns: 1fr !important;
-            }
+            .rocket-column { width: 100% !important; position: static !important; margin-top: 20px; }
+            .tall-rocket-img { max-height: 400px; width: auto !important; object-fit: contain; display: block; margin: 0 auto; }
+            .media-container[style*="grid"] { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
@@ -424,7 +102,6 @@
             <p class="header-description">
                 Avionics Team Leader and Executive Board Member of the Boston University Rocket Propulsion Group (BURPG), Undergraduate Researcher in the Morphable Biorobotics Lab
             </p>
-            
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/percy-chen-451ad/" class="social-btn" style="background: #0077b5;">LinkedIn</a>
                 <a href="https://github.com/PercyChen451" class="social-btn" style="background: #333;">GitHub</a>
@@ -445,7 +122,7 @@
         <a href="#icarus" class="gallery-item">
             <img src="IMG_6588.JPG" alt="Icarus">
             <div class="gallery-text">
-                <h3>🚀 Liquid Engine Rokcet "Icarus"</h3>
+                <h3>🚀 Liquid Engine Rocket "Icarus"</h3>
                 <p>World Record Bipropellant Rocket</p>
             </div>
         </a>
@@ -468,6 +145,7 @@
             <div class="gallery-text"><h3>⚖️ Balancing Robot</h3><p>PID Control & IMU (WIP)</p></div>
         </a>
     </div>
+
     <nav class="nav-container">
         <div class="nav-links">
             <a href="#active" class="nav-link">⚡ Active Work</a>
@@ -490,49 +168,24 @@
                 </h2>
                 <p class="project-subtitle">PCB, hardware, design/testing, leadership</p>
             </div>
-            <div class="project-duration" style="background: #27ae60;">
-                Current Sprint
-            </div>
+            <div class="project-duration" style="background: #27ae60;">Current Sprint</div>
         </div>
 
         <div style="background: #e8f8f5; padding: 20px; border-radius: 8px; margin-bottom: 25px;">
             <h4 style="margin-top: 0; color: #219150;">📅 Latest Update</h4>
-            <p style="margin-bottom: 0;">
-                Board bring-up & System testware:
-            </p>
+            <p style="margin-bottom: 0;">Board bring-up & System testware:</p>
         </div>
 
         <div style="display: flex; gap: 40px; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 280px;">
                 <h3>🚧 Checklist</h3>
-                <div class="checklist-item">
-                    <span class="checkbox">☑</span> Board bring-up: 
-                    Power system ✅️
-                    BMS ✅️
-                    Actuator driver ✅️
-                    ADC ✅️
-                    Ethernet PHY ✅️
-                    CAN ✅️
-                    Board sensing ✅️
-
-                </div>
-                <div class="checklist-item">
-                    <span class="checkbox">☐</span> Board bring-up: Ethernet Switch 
-                
-                </div>
-                <div class="checklist-item">
-                    <span class="checkbox">☐</span> Flight software
-                </div>
-                <div class="checklist-item">
-                    <span class="checkbox">☐</span> Finish system FMEA
-                </div>
-                <div class="checklist-item">
-                    <span class="checkbox">☐</span> conceptual design review for Telemetry system
-                </div>
+                <div class="checklist-item"><span class="checkbox">☑</span> Board bring-up: Power system ✅️ BMS ✅️ Actuator driver ✅️ ADC ✅️ Ethernet PHY ✅️ CAN ✅️ Board sensing ✅️</div>
+                <div class="checklist-item"><span class="checkbox">☐</span> Board bring-up: Ethernet Switch</div>
+                <div class="checklist-item"><span class="checkbox">☐</span> Flight software</div>
+                <div class="checklist-item"><span class="checkbox">☐</span> Finish system FMEA</div>
+                <div class="checklist-item"><span class="checkbox">☐</span> conceptual design review for Telemetry system</div>
             </div>
-
             <div style="flex: 1; min-width: 330px;">
-                
                 <div style="margin-top: 15px; border: 2px dashed #ccc; border-radius: 8px; padding: 20px; text-align: center; color: #7f8c8d;">
                     <p>📸 "ArgoFC.jpg" </p>
                     <img src="ArgoFCTest.jpg" alt="ArgoFC Test" width="350" onclick="openLightbox(this.src)">
@@ -549,25 +202,18 @@
             </div>
             <div class="project-duration">2023.11 - 2025.3</div>
         </div>
-
         <div class="media-container">
             <img src="icaurs_poster.png" alt="Icarus Rocket" width="260" onclick="openLightbox(this.src)">
             <img src="IMG_6588.JPG" alt="Icarus Rocket" width="300" onclick="openLightbox(this.src)">
             <p><em>Icarus Rocket</em></p>
         </div>
-
         <div class="media-container">
             <h3>🎥 Launch Video</h3>
             <div class="video-responsive">
-                <iframe src="https://www.youtube.com/embed/vnxtU_Yg_ek" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
+                <iframe src="https://www.youtube.com/embed/vnxtU_Yg_ek" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <p style="margin-top:10px;">Or <a href="https://youtu.be/vnxtU_Yg_ek?si=zENWsmLVR8DaiayS" target="_blank">watch on YouTube</a></p>
         </div>
-
         <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107;">
             <h4 style="margin: 0 0 10px 0;">🏆 Mission Achievements</h4>
             <ul style="margin: 0;">
@@ -577,318 +223,5 @@
                 <li>Fully recovered with custom recovery system</li>
             </ul>
         </div>
-
         <div style="background: #e8f4fd; padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #0366d6;">
-            <h4 style="margin: 0 0 15px 0; color: #2c3e50;">📰 Featured in BU Engineering News</h4>
-            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 250px;">
-                    <h5 style="margin: 0 0 10px 0; color: #0366d6;">
-                        <a href="https://www.bu.edu/eng/2025/09/22/skyward-bound/" 
-                           target="_blank" 
-                           style="color: #0366d6; text-decoration: none;">
-                             Skyward Bound: BU Rocket Propulsion Group Sets New Collegiate Record
-                        </a>
-                    </h5>
-                    <p style="margin: 0; color: #666; font-size: 0.95em;">
-                        BU Engineering covers the historic launch of Icarus, the first liquid bipropellant rocket 
-                        to set a world record for collegiate take-off thrust at ~2,200 lbs.
-                    </p>
-                </div>
-                <a href="https://www.bu.edu/eng/2025/09/22/skyward-bound/" 
-                   target="_blank" 
-                   style="background: #0366d6; color: white; padding: 10px 20px; border-radius: 6px; 
-                          text-decoration: none; font-weight: bold; white-space: nowrap; margin-top: 5px;">
-                    Read Article
-                </a>
-            </div>
-        </div>
-
-        <h3>🔧 My Contributions</h3>
-        <div class="responsibilities-grid">
-            <div class="responsibility-card">
-                <strong>PCB Controller</strong> - Ground system electronical design
-            </div>
-            <div class="responsibility-card">
-                <strong>System Integration</strong> - Ground support systems with electronic and Fluid feeding system
-            </div>
-            <div class="responsibility-card">
-                <strong>Recovery Systems</strong> - Electrical test support for Separation & Recovery systems
-            </div>
-            <div class="responsibility-card">
-                <strong>Firmware</strong> - Participated in FreeRTOS implementation and testing
-            </div>
-            <div class="responsibility-card">
-                <strong>Field Operations</strong> - 60 hours of field test op 
-            </div>
-        </div>
-    </section>
-
-    <section id="argo" class="project">
-        <div class="project-header">
-            <div>
-                <h2 class="project-title">🚀 Argo - High-Altitude Rocket (WIP)</h2>
-                <p class="project-subtitle">Boston University Rocket Propulsion Group (BURPG)</p>
-            </div>
-            <div class="project-duration">2025.4 - Present</div>
-        </div>
-
-        <div class="rocket-layout" style="display: flex; gap: 30px; align-items: flex-start;">
-            
-            <div class="content-column" style="flex: 1;">
-                
-                <div class="media-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
-                    <img src="FCREV1.png" alt="Flight Computer Design" style="width: 100%; margin: 0;" onclick="openLightbox(this.src)">
-                    <img src="ArgoFCrev1.png" alt="PCB Layout" style="width: 100%; margin: 0;" onclick="openLightbox(this.src)">
-                    <img src="ArgoFC1.drawio (1).png" alt="Flight Computer Design" style="width: 100%; margin: 0;" onclick="openLightbox(this.src)">
-                    <img src="ArgoFCFullPCBA.jpg" alt="PCB Layout" style="width: 100%; margin: 0;" onclick="openLightbox(this.src)">
-                </div>
-                <p style="text-align: center; color: #666; font-size: 0.9em; margin-top: -10px;"><em>Flight Computer PCB Design & Layout</em></p>
-
-                <h3>🎯 Project Overview</h3>
-                <p>Flagship high-altitude vehicle designed to reach <strong>100,000 ft</strong> with innovative closed-loop controlled COPV system for real-time propellant tank pressure regulation.</p>
-                
-                <h3>👨‍💼 My Role: Project Leader & Avionics Team Lead</h3>
-                <div class="responsibilities-grid">
-                    <div class="responsibility-card">
-                        <strong>Avionics Architecture</strong> - Complete complex system design
-                    </div>
-                    <div class="responsibility-card">
-                        <strong>Simulation</strong> - LTspice, Pspice, Simulink and Altium circuit simulation
-                    </div>
-                    <div class="responsibility-card">
-                        <strong>Test Operation Leader</strong> - SOP, Red team leader, Lab coordinator
-                    </div>
-                    <div class="responsibility-card">
-                        <strong>Electrical Design</strong> - 4-layer PCB with robust actuator driver and closed-loop control
-                    </div>
-                    <div class="responsibility-card">
-                        <strong>Data acquisition</strong> - Delta-Sigma ADC for hyper-fast data acquisition
-                    </div>
-                    <div class="responsibility-card">
-                        <strong>Power Systems</strong> - BMS & protection circuits, Soft Starter, Buck converter
-                    </div>
-                    <div class="responsibility-card">
-                        <strong>Communication</strong> - Ethernet, CAN bus, Lora, UART
-                    </div>
-                </div>
-
-                <h3>🛠️ Technical Specifications</h3>
-                <div class="tech-stack">
-                    <span class="tech-tag">Close Loop Control</span>
-                    <span class="tech-tag">STM32H743</span>
-                    <span class="tech-tag">4-Layer PCB</span>
-                    <span class="tech-tag">BMS</span>
-                    <span class="tech-tag">Efuse Protection</span>
-                    <span class="tech-tag">Ethernet Switch</span>
-                    <span class="tech-tag">Load Switches</span>
-                    <span class="tech-tag">Delta-Sigma ADC</span>
-                    <span class="tech-tag">CAN Bus</span>
-                    <span class="tech-tag">IMU</span>
-                    <span class="tech-tag">Altimeter</span>
-                    <span class="tech-tag">Constant Current Driver</span>
-                    <span class="tech-tag">ESC</span>
-                    <span class="tech-tag">Lora</span>
-                </div>
-            </div>
-
-            <div class="rocket-column" style="width: 160px; flex-shrink: 0; position: sticky; top: 100px; text-align: center;">
-                <img src="ArgoRocket.png" alt="Argo Rocket Full Stack" class="tall-rocket-img" style="width: 100%; height: auto; border-radius: 8px;" onclick="openLightbox(this.src)">
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="daedalus" class="project">
-        <div class="project-header">
-            <div>
-                <h2 class="project-title">🎛️ Daedalus Ground Support Controller</h2>
-                <p class="project-subtitle">Boston University Rocket Propulsion Group</p>
-            </div>
-            <div class="project-duration">2023.11 - 2025.2</div>
-        </div>
-
-        <div class="media-container">
-            <img src="DLrev2_testing.jpg" alt="Controller Testing" width="340" onclick="openLightbox(this.src)">
-            <img src="IcarusGSE1.png" alt="Ground Support Equipment" width="430" onclick="openLightbox(this.src)">
-            <p><em>Controller Testing & Ground Support System</em></p>
-        </div>
-
-        <h3>🔧 Designed for HTS(Horizontal Test Stand) and Icarus</h3>
-
-        <div class="responsibilities-grid">
-            <div class="responsibility-card">
-                <strong>Circuit Simulation</strong> - LTspice/PSpice
-            </div>
-            <div class="responsibility-card">
-                <strong>Schematic Capture</strong> - Altium Designer
-            </div>
-            <div class="responsibility-card">
-                <strong>PCB Layout</strong> - 4-layer design
-            </div>
-            <div class="responsibility-card">
-                <strong>Design Reviews</strong> - Formal validation
-            </div>
-            <div class="responsibility-card">
-                <strong>Firmware Integration</strong> - System control
-            </div>
-            <div class="responsibility-card">
-                <strong>GUI Development</strong> - Operational interface
-            </div>
-        </div>
-
-        <h3>🎯 System Capabilities</h3>
-        <ul>
-            <li><strong>Propellant Loading</strong> - Precise control systems</li>
-            <li><strong>Data Acquisition</strong> - Real-time telemetry</li>
-            <li><strong>Engine Ignition</strong> - Controlled sequences</li>
-            <li><strong>Valve Control</strong> - Vehicle/Test stand main valve operations</li>
-        </ul>
-    </section>
-
-    <section id="research" class="project">
-        <div class="project-header">
-            <div>
-                <h2 class="project-title">🤖 Surgical Robot Research</h2>
-                <p class="project-subtitle">Morphable Biorobotics Lab, Boston University</p>
-            </div>
-            <div class="project-duration">Ongoing Research</div>
-        </div>
-
-        <div class="media-container">
-            <img src="SRfigure.png" alt="Surgical Robot Design" width="400" onclick="openLightbox(this.src)">
-            <img src="Tracking.png" alt="Tracking System" width="400" onclick="openLightbox(this.src)">
-            <img src="FS.png" alt="Force Sensor PCB" width="300" onclick="openLightbox(this.src)">
-            <img src="HapticsGUI.png" alt="HapticsUI" width="445" onclick="openLightbox(this.src)">
-            <p><em>Soft Robot Design & Tracking System</em></p>
-        </div>
-
-        <h3>🔬 Research Focus</h3>
-        <p>Developing electrical control system, ROS2 Firmware and close loop controller for minimally invasive surgery (MIS) soft robots, with Prof. Ranzani and PhD Candidate Leonardo Zamora.</p>
-        
-        <div style="background: #f3e5f5; padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #8e24aa;">
-            <h4 style="margin: 0 0 15px 0; color: #4a148c;">📰 Featured in BU CISE News</h4>
-            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 250px;">
-                    <h5 style="margin: 0 0 10px 0; color: #8e24aa;">
-                        <a href="https://www.bu.edu/cise/how-a-low-cost-soft-robot-is-learning-to-perform-surgery-inside-a-beating-heart/" 
-                           target="_blank" 
-                           style="color: #8e24aa; text-decoration: none;">
-                            How a Low-Cost Soft Robot Is Learning to Perform Surgery Inside a Beating Heart
-                        </a>
-                    </h5>
-                    <p style="margin: 0; color: #666; font-size: 0.95em;">
-                        Highlighting our research with Leonardo Zamora on autonomous soft robots for minimally invasive surgery.
-                    </p>
-                </div>
-                <a href="https://www.bu.edu/cise/how-a-low-cost-soft-robot-is-learning-to-perform-surgery-inside-a-beating-heart/" 
-                   target="_blank" 
-                   style="background: #8e24aa; color: white; padding: 10px 20px; border-radius: 6px; 
-                          text-decoration: none; font-weight: bold; white-space: nowrap; margin-top: 5px;">
-                    Read Article
-                </a>
-            </div>
-        </div>
-
-        <h3>🔧 Technical Contributions</h3>
-        <div class="responsibilities-grid">
-            <div class="responsibility-card">
-                <strong>Data Acquisition</strong> - 8-channel 18bits real-time system with 1000 SPS 
-            </div>
-            <div class="responsibility-card">
-                <strong>Force Sensor</strong> - 6 DOF (XYZ Force & Torque), ± 15mN precision at each Axis
-            </div>
-            <div class="responsibility-card">
-                <strong>Tracking System</strong> - 3-camera position tracking and magnetic localization
-            </div>
-            <div class="responsibility-card">
-                <strong>Machine Learning</strong> - Calibrated sensor with FCNN (fully connected neural networks)
-            </div>
-            <div class="responsibility-card">
-                <strong>Signal processing</strong> - Differential sensor setup, faraday cage wire harness, Karman filter for Tracking system
-            </div>
-            <div class="responsibility-card">
-                <strong>Control Systems</strong> - Inverse kinematics & closed-loop controller for SBA
-            </div>
-        </div>
-
-        <h3>🛠️ Technical Stack</h3>
-        <div class="tech-stack">
-            <span class="tech-tag">Custom PCB Design</span>
-            <span class="tech-tag">BLDC Motor Drivers</span>
-            <span class="tech-tag">ROS2</span>
-            <span class="tech-tag">Signal processing</span>
-            <span class="tech-tag">Magnetometers</span>
-            <span class="tech-tag">FCNN Modeling</span>
-            <span class="tech-tag">Data-Driven Calibration</span>
-            <span class="tech-tag">Inverse Kinematics</span>
-        </div>
-
-        <div style="background: #d4edda; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #28a745;">
-            <strong>📄 Publication:</strong> Contributing to journal paper currently in preparation
-        </div>
-    </section>
-
-    <section id="ec412" class="project">
-        <div class="project-header">
-            <h2 class="project-title">⚡ EC412 project</h2>
-            <p class="project-subtitle">PID controlled Buck converter</p>
-        </div>
-
-        <div class="media-container">
-            <img src="System overview.png" alt="System overview" width="400" onclick="openLightbox(this.src)">
-            <img src="breadboard.drawio.png" alt="breadboard.drawio" width="400" onclick="openLightbox(this.src)">
-            
-            <img src="PID_Ltspice.png" alt="Analog PID Circuit Schematic" width="400" onclick="openLightbox(this.src)">
-            <img src="Schmitt_trigger with_positive_integrator.png" alt="Transient Response Oscilloscope Trace" width="400" onclick="openLightbox(this.src)">
-            
-            <p><em>Circuit & Test Results</em></p>
-        </div>
-
-        <h3>🔧 Technical Stack</h3>
-        <div class="responsibilities-grid">
-            <div class="responsibility-card">
-                <strong>Analog PID controller</strong>
-            </div>
-            <div class="responsibility-card">
-                <strong>Fast Response</strong> 
-            </div>
-            <div class="responsibility-card">
-                <strong>Schmitt-trigger with positive integrator</strong> 
-            </div>
-            
-        </div>
-    </section>
-
-    <div id="lightbox">
-        <img id="lightbox-img" src="" alt="Enlarged view">
-        <button id="lightbox-close" onclick="closeLightbox()">✕</button>
-    </div>
-
-    <button id="backToTop" onclick="scrollToTop()">↑</button>
-
-    <script>
-        // Back to Top Button
-        window.onscroll = function() {
-            var button = document.getElementById('backToTop');
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                button.style.display = 'block';
-            } else {
-                button.style.display = 'none';
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        // Lightbox functionality
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+            <h4 style="margin: 0 0 15px 0; color: #2c3e50;">📰 Featured in BU Engineering
