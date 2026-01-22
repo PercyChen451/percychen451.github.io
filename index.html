@@ -828,158 +828,36 @@
         </div>
     </section>
 
-    <section id="ec412" class="project-entry">
+    <section id="ec412" class="project">
         <div class="project-header">
-            <div class="title-row">
-                <h2 class="project-title">⚡ EC412 Project</h2>
-                <span class="status-badge">Completed Apr 2025</span>
-            </div>
-            <p class="project-subtitle">Custom Analog PID Controlled Buck Converter</p>
-            <p class="role"><strong>Team:</strong> Aymeric Blaizot & Yuxuan (Percy) Chen</p>
+            <h2 class="project-title">⚡ EC412 project</h2>
+            <p class="project-subtitle">PID controlled Buck converter</p>
         </div>
 
-        <div class="media-grid">
-            <div class="media-item">
-                <img src="System overview.png" alt="System Overview Block Diagram" onclick="openLightbox(this.src)">
-                <span class="caption">System Architecture</span>
-            </div>
-            <div class="media-item">
-                <img src="breadboard.drawio.png" alt="Breadboard Implementation Layout" onclick="openLightbox(this.src)">
-                <span class="caption">Circuit Assembly</span>
-            </div>
-            <div class="media-item">
-                <img src="PID_Ltspice.png" alt="Analog PID Circuit Schematic" onclick="openLightbox(this.src)">
-                <span class="caption">PID Schematic (5-Op-Amp Topology)</span>
-            </div>
-            <div class="media-item">
-                <img src="Schmitt_trigger with_positive_integrator.png" alt="Transient Response Oscilloscope Trace" onclick="openLightbox(this.src)">
-                <span class="caption">Transient Response Analysis</span>
-            </div>
+        <div class="media-container">
+            <img src="System overview.png" alt="System overview" width="400" onclick="openLightbox(this.src)">
+            <img src="breadboard.drawio.png" alt="breadboard.drawio" width="400" onclick="openLightbox(this.src)">
+            
+            <img src="PID_Ltspice.png" alt="Analog PID Circuit Schematic" width="400" onclick="openLightbox(this.src)">
+            <img src="Schmitt_trigger with_positive_integrator.png" alt="Transient Response Oscilloscope Trace" width="400" onclick="openLightbox(this.src)">
+            
+            <p><em>Circuit & Test Results</em></p>
         </div>
 
-        <div class="project-details">
-            <h3>Project Overview</h3>
-            <p>
-                Designed and constructed a custom closed-loop DC-DC buck converter to reverse-engineer commercial IC architecture. 
-                We implemented a continuous-time <strong>analog PID controller</strong> using discrete op-amps to actively regulate output voltage against load variances.
-            </p>
-
-            <div class="insights-container">
-                <h4>Engineering Highlights</h4>
-                <ul>
-                    <li>
-                        <strong>Analog Control Loop:</strong> Designed a 5-op-amp PID controller with independent Proportional, Integral, and Derivative stages to eliminate steady-state error and dampen overshoot.
-                    </li>
-                    <li>
-                        <strong>PWM Generation:</strong> Engineered a custom duty-cycle generator using a precision comparator and BJT-amplified ramp signal.
-                    </li>
-                    <li>
-                        <strong>Performance:</strong> Achieved <strong>&lt;3% voltage tracking error</strong> in the active range (1.3V–3.0V) with low output ripple (~20mV).
-                    </li>
-                    <li>
-                        <strong>Optimization:</strong> Tuned derivative gain to balance fast transient response against high-frequency noise amplification.
-                    </li>
-                </ul>
+        <h3>🔧 Technical Stack</h3>
+        <div class="responsibilities-grid">
+            <div class="responsibility-card">
+                <strong>Analog PID controller</strong>
             </div>
-        </div>
-
-        <div class="tech-stack">
-            <span class="tech-tag">Analog Circuit Design</span>
-            <span class="tech-tag">PID Control Theory</span>
-            <span class="tech-tag">LTspice Simulation</span>
-            <span class="tech-tag">Power Electronics</span>
-            <span class="tech-tag">Oscilloscope Debugging</span>
+            <div class="responsibility-card">
+                <strong>Fast Response</strong> 
+            </div>
+            <div class="responsibility-card">
+                <strong>Schmitt-trigger with positive integrator</strong> 
+            </div>
+            
         </div>
     </section>
-
-    <style>
-        .project-entry {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        .project-header .title-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-title { margin: 0; color: #333; }
-        
-        .status-badge {
-            background: #e0f2f1;
-            color: #00695c;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        .project-subtitle { color: #666; margin: 5px 0 15px 0; font-size: 1.1rem; }
-        .role { font-size: 0.9rem; color: #555; margin-bottom: 20px; }
-
-        /* Grid Layout for Images */
-        .media-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .media-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .media-item img {
-            width: 100%;
-            height: 200px; /* Fixed height for uniformity */
-            object-fit: cover; /* Crops image nicely to fit box */
-            border-radius: 6px;
-            border: 1px solid #eee;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .media-item img:hover { transform: scale(1.02); }
-        
-        .caption {
-            font-size: 0.8rem;
-            color: #777;
-            margin-top: 5px;
-            font-style: italic;
-        }
-
-        .project-details h3 { font-size: 1.2rem; color: #222; }
-        .project-details p { line-height: 1.6; color: #444; }
-
-        .insights-container {
-            background: #f9fafb;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #3b82f6;
-            margin-top: 15px;
-        }
-
-        .insights-container h4 { margin-top: 0; font-size: 1rem; }
-        .insights-container ul { padding-left: 20px; margin-bottom: 0; }
-        .insights-container li { margin-bottom: 8px; color: #444; font-size: 0.95rem; }
-
-        .tech-stack { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
-        .tech-tag {
-            background: #edf2f7;
-            color: #2d3748;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-    </style>
 
     <div id="lightbox">
         <img id="lightbox-img" src="" alt="Enlarged view">
