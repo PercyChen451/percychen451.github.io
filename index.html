@@ -380,7 +380,56 @@
             <div class="responsibility-card"><strong>Machine Learning</strong> - Calibrated sensor with FCNN (Feed-Forward Neural Networks)</div>
         </div>
     </section>
+    <section id="solid-fc" class="project">
+        <div class="project-header">
+            <div>
+                <h2 class="project-title">💥 Solid Rocket Flight Computer</h2>
+                <p class="project-subtitle">Separation & Recovery Testbed</p>
+            </div>
+            <div class="project-duration">2024</div>
+        </div>
 
+        <div class="media-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="SolidRocket_Schematic.png" alt="Schematic" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">Schematic Design</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="SolidRocket_Layout.png" alt="PCB Layout" style="height: 200px; object-fit: cover; width: 100%;" onclick="openLightbox(this.src)">
+                <span style="font-size: 0.8em; color: #666; margin-top: 5px;">PCB Layout</span>
+            </div>
+        </div>
+
+        <div class="project-details">
+            <h3>Project Overview</h3>
+            <p>
+                Designed a compact flight computer specifically for solid motor rockets to validate separation and recovery algorithms. 
+                This system serves as a low-cost testbed for Data Acquisition (DAQ) and dual-deployment recovery logic before implementation on larger liquid vehicles.
+            </p>
+
+            <div style="background: #fff8e1; padding: 15px; border-radius: 6px; border-left: 4px solid #ff9800; margin-top: 15px;">
+                <h4 style="margin-top: 0; font-size: 1rem; color: #e65100;">System Capabilities</h4>
+                <ul style="padding-left: 20px; margin-bottom: 0;">
+                    <li style="margin-bottom: 8px;">
+                        <strong>Recovery Control:</strong> Pyrotechnic channels for dual-deployment (Drogue & Main parachute) based on barometric altitude and IMU data.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Data Acquisition:</strong> High-speed logging of flight dynamics to validate simulation models.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Compact Design:</strong> Optimized layout to fit within small-diameter airframes for rapid testing cycles.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-stack" style="margin-top: 20px;">
+            <span class="tech-tag" style="background: #ff9800;">PCB Design</span>
+            <span class="tech-tag" style="background: #ff9800;">STM32</span>
+            <span class="tech-tag" style="background: #ff9800;">Sensors & DAQ</span>
+            <span class="tech-tag" style="background: #ff9800;">Pyrotechnics</span>
+        </div>
+    </section>
     <section id="ec412" class="project">
         <div class="project-header">
             <div>
