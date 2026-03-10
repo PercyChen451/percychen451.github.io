@@ -174,70 +174,77 @@
     </nav>
 
     <hr class="section-divider">
-
 <section id="active" class="project" style="border-left: 5px solid #2ecc71; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    
+    <div class="project-header" style="margin-bottom: 20px;">
+        <div>
+            <h2 class="project-title" style="display: flex; align-items: center; gap: 10px;">
+                <span class="live-indicator"></span>
+                Currently Building: Argo Avionics
+            </h2>
+            <p class="project-subtitle">PCB Design, Hardware Integration & Leadership</p>
+        </div>
+        <div class="project-duration" style="background: #27ae60; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; height: fit-content;">
+            Current Sprint
+        </div>
+    </div>
+
+    <div style="background: #e8f8f5; border-left: 4px solid #27ae60; padding: 15px; border-radius: 4px; margin-bottom: 30px;">
+        <h4 style="margin: 0 0 5px 0; color: #219150; display: flex; align-items: center; gap: 8px;">
+            📅 Latest Update
+        </h4>
+        <p style="margin: 0; color: #444;"><strong>Milestone Reached:</strong> First rounds of Hardware-in-the-Loop (HiL) testing complete. Validated real-time actuator response and sensor feedback loop.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start;">
         
-        <div class="project-header" style="margin-bottom: 20px;">
-            <div>
-                <h2 class="project-title" style="display: flex; align-items: center; gap: 10px;">
-                    <span class="live-indicator"></span>
-                    Currently Building: Argo Avionics
-                </h2>
-                <p class="project-subtitle">PCB Design, Hardware Integration & Leadership</p>
+        <div>
+            <h3 style="margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px;">🚧 Progress Checklist</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="checklist-item" style="background: #fdfdfd; padding: 10px; border: 1px solid #eee; border-radius: 6px;">
+                    <span class="checkbox">☑</span> <strong>Board Bring-up:</strong> Power, BMS, ADC, Ethernet PHY, CAN, Sensors ✅️
+                </div>
+                <div class="checklist-item" style="background: #eafaf1; padding: 10px; border: 1px solid #2ecc71; border-radius: 6px;">
+                    <span class="checkbox">☑</span> <strong>HiL Testing:</strong> Rounds 1 & 2 Complete (See Videos)
+                </div>
+                <div class="checklist-item" style="padding: 10px; opacity: 0.8;">
+                    <span class="checkbox">☐</span> <strong>Next:</strong> Ethernet Switch Validation
+                </div>
+                <div class="checklist-item" style="padding: 10px; opacity: 0.8;">
+                    <span class="checkbox">☐</span> Flight Software Integration
+                </div>
+                <div class="checklist-item" style="padding: 10px; opacity: 0.8;">
+                    <span class="checkbox">☐</span> System FMEA & Safety Review
+                </div>
             </div>
-            <div class="project-duration" style="background: #27ae60; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; height: fit-content;">
-                Current Sprint
-            </div>
-        </div>
-
-        <div style="background: #e8f8f5; border-left: 4px solid #27ae60; padding: 15px; border-radius: 4px; margin-bottom: 30px;">
-            <h4 style="margin: 0 0 5px 0; color: #219150; display: flex; align-items: center; gap: 8px;">
-                📅 Latest Update
-            </h4>
-            <p style="margin: 0; color: #444;"><strong>Milestone Reached:</strong> First round of Hardware-in-the-Loop (HiL) testing complete.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 350px; gap: 40px; align-items: start;">
             
-            <div>
-                <h3 style="margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px;">🚧 Progress Checklist</h3>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <div class="checklist-item" style="background: #fdfdfd; padding: 10px; border: 1px solid #eee; border-radius: 6px;">
-                        <span class="checkbox">☑</span> <strong>Board Bring-up:</strong> Power, BMS, ADC, Ethernet PHY, CAN, Sensors ✅️
-                    </div>
-                    <div class="checklist-item" style="background: #eafaf1; padding: 10px; border: 1px solid #2ecc71; border-radius: 6px;">
-                        <span class="checkbox">☑</span> <strong>HiL Testing:</strong> Round 1 Complete (See Video)
-                    </div>
-                    <div class="checklist-item" style="padding: 10px; opacity: 0.8;">
-                        <span class="checkbox">☐</span> <strong>Next:</strong> Ethernet Switch Validation
-                    </div>
-                    <div class="checklist-item" style="padding: 10px; opacity: 0.8;">
-                        <span class="checkbox">☐</span> Flight Software Integration
-                    </div>
-                    <div class="checklist-item" style="padding: 10px; opacity: 0.8;">
-                        <span class="checkbox">☐</span> System FMEA & Safety Review
-                    </div>
-                </div>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                
-                <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
-                    <img src="ArgoFCFullPCBA.jpg" alt="ArgoFC Test Setup" style="width: 100%; border-radius: 4px; cursor: pointer;" onclick="openLightbox(this.src)">
-                    <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">📸 Bench Test Setup</p>
-                </div>
-
-                <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
-                    <video width="100%" controls playsinline style="border-radius: 4px; background: #000; display: block;">
-                        <source src="HiL_Test.mp4" type="video/mp4">
-                        Your browser does not support the video tag. <a href="HiL_Test.mp4">Download Video</a>
-                    </video>
-                    <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">🎥 <strong>Demo:</strong> HiL Test Run</p>
-                </div>
-
+            <div style="margin-top: 30px; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
+                <img src="ArgoFCFullPCBA.jpg" alt="ArgoFC Test Setup" style="width: 100%; border-radius: 4px; cursor: pointer;" onclick="openLightbox(this.src)">
+                <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">📸 Bench Test Setup</p>
             </div>
         </div>
-    </section>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
+                <video width="100%" controls playsinline muted style="border-radius: 4px; background: #000; display: block;">
+                    <source src="HiL_Test.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">🎥 <strong>HiL Test 1:</strong> Initial Integration</p>
+            </div>
+
+            <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
+                <video width="100%" controls playsinline muted style="border-radius: 4px; background: #000; display: block;">
+                    <source src="HiL2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">🎥 <strong>HiL Test 2:</strong> High-Speed Actuation</p>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <section id="icarus" class="project">
         <div class="project-header">
